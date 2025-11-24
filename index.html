@@ -199,45 +199,45 @@
     <div class="ui-layer flex flex-col">
         
         <!-- LOBBY SCREEN -->
-        <div id="lobbyScreen" class="absolute inset-0 flex flex-col items-center justify-center pointer-events-auto z-50">
+        <div id="lobbyScreen" class="absolute inset-0 flex flex-col items-center justify-center pointer-events-auto z-50 overflow-y-auto">
             
-            <div class="relative z-10 flex flex-col items-center w-full max-w-6xl h-full py-10 px-4 justify-center">
+            <div class="relative z-10 flex flex-col items-center w-full max-w-6xl min-h-full py-4 md:py-6 lg:py-10 px-4 justify-start md:justify-center">
                 
                 <!-- MAIN TITLE -->
-                <div class="text-center mb-6 mt-12 md:mt-16 lg:mt-20">
-                    <h1 class="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-yellow-400 via-orange-500 to-red-700 title-3d select-none transform scale-y-110 leading-none pb-2">
+                <div class="text-center mb-4 md:mb-6 mt-6 md:mt-12 lg:mt-16 shrink-0">
+                    <h1 class="text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-yellow-400 via-orange-500 to-red-700 title-3d select-none transform scale-y-110 leading-none pb-2">
                         ATEŞTEN<br>TOPRAKLAR
                     </h1>
-                    <p class="text-orange-300 font-bold text-sm md:text-lg tracking-[0.4em] uppercase mt-4 opacity-80 text-shadow">
+                    <p class="text-orange-300 font-bold text-xs md:text-sm lg:text-lg tracking-[0.3em] md:tracking-[0.4em] uppercase mt-2 md:mt-4 opacity-80 text-shadow">
                         Kader Çizgisi & Küresel Hakimiyet
                     </p>
                 </div>
 
-                <p id="lobbyStatus" class="text-red-500 font-mono text-xs tracking-[0.3em] animate-pulse mb-10 uppercase font-bold bg-black/40 px-4 py-1 rounded-full border border-red-900/50">
+                <p id="lobbyStatus" class="text-red-500 font-mono text-xs tracking-[0.3em] animate-pulse mb-4 md:mb-6 lg:mb-10 uppercase font-bold bg-black/40 px-4 py-1 rounded-full border border-red-900/50 shrink-0">
                     Sistemler Hazırlanıyor...
                 </p>
 
                 <!-- Step 1: Setup Config -->
-                <div id="setupConfig" class="hidden glass-panel p-8 max-w-md w-full fade-in-up flex flex-col gap-6 border-t-4 border-t-orange-600">
-                    <h2 class="text-2xl font-black text-white border-b border-white/10 pb-4 text-center italic uppercase">Savaş Odası</h2>
+                <div id="setupConfig" class="hidden glass-panel p-4 md:p-6 lg:p-8 max-w-md w-full fade-in-up flex flex-col gap-4 md:gap-6 border-t-4 border-t-orange-600 mb-4 md:mb-6 shrink-0">
+                    <h2 class="text-xl md:text-2xl font-black text-white border-b border-white/10 pb-3 md:pb-4 text-center italic uppercase">Savaş Odası</h2>
                     
                     <div class="space-y-2">
                         <label class="text-[10px] uppercase tracking-[0.2em] text-red-400 font-bold">İnsan Komutanlar</label>
                         <div class="relative group">
-                            <select id="humanCount" class="w-full bg-black/60 border border-red-900 rounded-none p-3 text-white focus:border-orange-500 outline-none appearance-none font-bold tracking-wider transition-colors group-hover:bg-red-900/20">
+                            <select id="humanCount" class="w-full bg-black/60 border border-red-900 rounded-none p-2 md:p-3 text-white focus:border-orange-500 outline-none appearance-none font-bold text-sm md:text-base tracking-wider transition-colors group-hover:bg-red-900/20">
                                 <option value="1">1 General</option>
                                 <option value="2" selected>2 General</option>
                                 <option value="3">3 General</option>
                                 <option value="4">4 General</option>
                             </select>
-                            <div class="absolute right-4 top-3 pointer-events-none text-orange-500"><i class="fas fa-user-shield"></i></div>
+                            <div class="absolute right-3 md:right-4 top-2 md:top-3 pointer-events-none text-orange-500"><i class="fas fa-user-shield text-sm md:text-base"></i></div>
                         </div>
                     </div>
 
                     <div class="space-y-2">
                         <label class="text-[10px] uppercase tracking-[0.2em] text-red-400 font-bold">Yapay Zeka Düşmanlar</label>
                         <div class="relative group">
-                            <select id="aiCount" class="w-full bg-black/60 border border-red-900 rounded-none p-3 text-white focus:border-orange-500 outline-none appearance-none font-bold tracking-wider transition-colors group-hover:bg-red-900/20">
+                            <select id="aiCount" class="w-full bg-black/60 border border-red-900 rounded-none p-2 md:p-3 text-white focus:border-orange-500 outline-none appearance-none font-bold text-sm md:text-base tracking-wider transition-colors group-hover:bg-red-900/20">
                                 <option value="0">Tehdit Yok</option>
                                 <option value="1">1 Lejyon</option>
                                 <option value="2" selected>2 Lejyon</option>
@@ -245,38 +245,38 @@
                                 <option value="4">4 Lejyon</option>
                                 <option value="5">5 Lejyon</option>
                             </select>
-                            <div class="absolute right-4 top-3 pointer-events-none text-red-600"><i class="fas fa-robot"></i></div>
+                            <div class="absolute right-3 md:right-4 top-2 md:top-3 pointer-events-none text-red-600"><i class="fas fa-robot text-sm md:text-base"></i></div>
                         </div>
                     </div>
 
-                    <button onclick="goToCountrySelect()" class="btn-3d w-full py-4 mt-4 group text-lg font-black skew-x-[-5deg] hover:skew-x-0 transition-transform">
+                    <button onclick="goToCountrySelect()" class="btn-3d w-full py-3 md:py-4 mt-4 group text-base md:text-lg font-black skew-x-[-5deg] hover:skew-x-0 transition-transform">
                         CEPHEYE GİT
                     </button>
                 </div>
 
                 <!-- Step 2: Country Selection -->
-                <div id="countryListContainer" class="hidden w-full h-full flex flex-col fade-in-up relative pt-4">
-                    <div class="glass-panel w-full p-4 mb-4 flex items-center justify-between border-l-8 border-l-orange-600 shrink-0">
-                        <div>
-                            <h2 id="playerSelectTitle" class="text-2xl md:text-3xl font-black text-white italic uppercase">1. General Seçimi</h2>
-                            <p class="text-orange-400 text-xs tracking-[0.4em] mt-1 font-bold">BAŞLANGIÇ ÜSSÜNÜ BELİRLE</p>
+                <div id="countryListContainer" class="hidden w-full flex flex-col fade-in-up relative pt-2 md:pt-4 max-h-[85vh] md:max-h-full">
+                    <div class="glass-panel w-full p-3 md:p-4 mb-3 md:mb-4 flex items-center justify-between border-l-8 border-l-orange-600 shrink-0">
+                        <div class="flex-1 min-w-0">
+                            <h2 id="playerSelectTitle" class="text-xl md:text-2xl lg:text-3xl font-black text-white italic uppercase truncate">1. General Seçimi</h2>
+                            <p class="text-orange-400 text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.4em] mt-1 font-bold">BAŞLANGIÇ ÜSSÜNÜ BELİRLE</p>
                         </div>
-                        <div class="h-12 w-12 rounded-full bg-gradient-to-br from-orange-500 to-red-700 flex items-center justify-center shadow-[0_0_30px_rgba(255,69,0,0.6)] animate-pulse">
-                            <i class="fas fa-crosshairs text-xl text-white"></i>
+                        <div class="h-10 w-10 md:h-12 md:w-12 rounded-full bg-gradient-to-br from-orange-500 to-red-700 flex items-center justify-center shadow-[0_0_30px_rgba(255,69,0,0.6)] animate-pulse shrink-0 ml-2">
+                            <i class="fas fa-crosshairs text-lg md:text-xl text-white"></i>
                         </div>
                     </div>
                     
-                    <div class="flex-1 overflow-y-auto pr-2 custom-scrollbar">
-                        <div id="countryGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 pb-20">
+                    <div class="flex-1 overflow-y-auto pr-2 custom-scrollbar min-h-0">
+                        <div id="countryGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-3 pb-4 md:pb-20">
                             <!-- Kartlar JS ile buraya gelecek -->
                         </div>
                     </div>
                 </div>
 
                 <!-- İMZA FOOTER -->
-                <div class="absolute bottom-6 w-full text-center pointer-events-none">
-                    <div class="inline-block px-6 py-2 glass-panel rounded-full border-none bg-black/40 backdrop-blur-sm">
-                        <p class="text-[10px] md:text-xs text-gray-400 tracking-[0.3em] uppercase font-bold opacity-70">
+                <div class="relative md:absolute bottom-2 md:bottom-6 w-full text-center pointer-events-none mt-4 md:mt-0 shrink-0">
+                    <div class="inline-block px-4 md:px-6 py-2 glass-panel rounded-full border-none bg-black/40 backdrop-blur-sm">
+                        <p class="text-[9px] md:text-[10px] lg:text-xs text-gray-400 tracking-[0.2em] md:tracking-[0.3em] uppercase font-bold opacity-70">
                             <span class="text-orange-500">Sungu Erdem</span> gururla sunar. &copy; 2025 Tüm Telif Hakları Saklıdır.
                         </p>
                     </div>
